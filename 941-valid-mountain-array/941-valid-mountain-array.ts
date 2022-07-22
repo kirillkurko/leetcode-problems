@@ -1,16 +1,27 @@
 function validMountainArray(arr: number[]): boolean {
-  let maxIndex = null;
+    let peak;
+	for (let i = 0; i < arr.length; i++) {
+		if (!peak && arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) {
+			if (i !== 0 && i !== arr.length - 1) {
+                peak = arr[i];
+			    continue;
+            }
+		}
+		if (!peak) {
+			if (arr[i] <= arr[i - 1]) {
+				return false;
+			}
+		}
+		else {
+			if (arr[i] >= arr[i - 1]) {
+				return false;
+			}
+		}
+	}
     
-  for (let i = 1; i <= arr.length - 1; ++i) {
-    if (maxIndex === null) {
-      if (arr[i] < arr[i - 1]) {
-        maxIndex = i - 1
-      } else if (arr[i] === arr[i - 1]) {
-        return false
-      }
-    } else if (arr[i] >= arr[i - 1]) {
-      return false
-    }
-  }
-  return maxIndex > 0 && maxIndex < arr.length - 1
+	if (!peak) {
+		return false;
+	}
+    
+	return true;
 };
