@@ -1,27 +1,27 @@
 function validMountainArray(arr: number[]): boolean {
-    let peak;
+	let highest;
+	if (arr.length < 3 || arr[0] >= arr[1]) {
+		return false;
+	}
 	for (let i = 0; i < arr.length; i++) {
-		if (!peak && arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) {
-			if (i !== 0 && i !== arr.length - 1) {
-                peak = arr[i];
-			    continue;
-            }
+		if (arr[i] === arr[i + 1]) {
+			return false;
 		}
-		if (!peak) {
-			if (arr[i] <= arr[i - 1]) {
+		if (!highest && arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) {
+			highest = arr[i];
+			if (arr[i + 1] === undefined) {
 				return false;
 			}
+			continue;
 		}
-		else {
+		if (highest) {
 			if (arr[i] >= arr[i - 1]) {
 				return false;
 			}
 		}
 	}
-    
-	if (!peak) {
+	if (!highest) {
 		return false;
 	}
-    
 	return true;
 };
