@@ -18,8 +18,6 @@ var countEven = function(num) {
                 sum += value % 10;
                 value = Math.floor(value / 10);
             }
-            
-            console.log(sum);
 
             if (sum % 2 === 0) {
                 res += 1;
