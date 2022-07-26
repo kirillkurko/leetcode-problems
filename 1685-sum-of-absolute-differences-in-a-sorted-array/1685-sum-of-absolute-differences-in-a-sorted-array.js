@@ -8,7 +8,8 @@ var getSumAbsoluteDifferences = function(nums) {
         const res = [];
     
         for (let i = 0; i < nums.length; ++i) {
-            res.push((i * (nums[i]) - pre) + ((sum - pre) - (nums.length - i) * nums[i]));
+            const value = (i * (nums[i]) - pre) + ((sum - pre) - (nums.length - i) * nums[i])
+            res.push(value);
             pre += nums[i];
         }
         
