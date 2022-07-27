@@ -20,11 +20,7 @@ var mergeAlternately = function(word1, word2) {
     
     let res = '';
     
-    const length = word1.length === word2.length ? word1.length : commonLength;
-    
-    console.log(length);
-    
-    for (let i = 0; i < length; ++i) {
+    for (let i = 0; i < commonLength; ++i) {
         res += first[i];
         res += second[i];
     }
