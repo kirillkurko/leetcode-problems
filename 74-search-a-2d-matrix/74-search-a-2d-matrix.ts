@@ -1,3 +1,3 @@
 function searchMatrix(matrix: number[][], target: number): boolean {
- return matrix.flat().indexOf(target) === -1 ? false : true;
+ return matrix.flat().indexOf(target) !== -1;
 };
