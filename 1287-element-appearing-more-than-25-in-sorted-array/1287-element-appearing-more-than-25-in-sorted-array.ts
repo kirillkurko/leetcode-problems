@@ -8,7 +8,6 @@ function findSpecialInteger(arr: number[]): number {
             return arr[i];
         }
         
-        
         if (arr[i + 1] !== arr[i]) {
             count = 0;
         }
