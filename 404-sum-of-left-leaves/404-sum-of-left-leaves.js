@@ -21,8 +21,5 @@ var sumOfLeftLeaves = function(root) {
         sum += root.left.val;
     } 
     
-    sum += sumOfLeftLeaves(root.right);
-    sum += sumOfLeftLeaves(root.left);
-    
-    return sum;
+    return sum + sumOfLeftLeaves(root.right) + sumOfLeftLeaves(root.left);
 };
