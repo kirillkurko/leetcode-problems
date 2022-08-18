@@ -9,7 +9,7 @@ var findDuplicate = function(nums) {
         if (map.has(num)) {
             return num;
         } else {
-            map.set(num, (map.get(num) ?? 0) + 1);
+            map.set(num, 1);
         }
     }
 };
