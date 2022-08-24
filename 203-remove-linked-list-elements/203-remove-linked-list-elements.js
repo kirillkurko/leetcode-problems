@@ -19,12 +19,12 @@ var removeElements = function(head, val) {
             curr.next = curr.next.next;
         }
         
-        if (curr?.next?.val !== val) {
+        if (curr.next && curr.next.val !== val) {
             curr = curr.next;
         }
     }
     
-    while (head?.val === val) {
+    while (head && head.val === val) {
         head = head.next;
     }
     
