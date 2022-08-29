@@ -13,7 +13,7 @@ var successfulPairs = function(spells, potions, success) {
         let left = 0;
         let right = potions.length - 1;
         
-        while(left < right) {
+        while (left < right) {
             const middle = (left + right) >> 1;
             
             if (potions[middle] * spell < success) {
