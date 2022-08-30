@@ -9,5 +9,7 @@ var uniqueOccurrences = function(arr) {
         map.set(value, (map.get(value) ?? 0) + 1);
     }
     
-    return [...new Set(map.values())].length === [...map.values()].length;
+    const values = [...map.values()];
+    
+    return [...new Set(values)].length === values.length;
 };
