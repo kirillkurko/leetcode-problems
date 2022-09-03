@@ -32,5 +32,5 @@ var intToRoman = function(num) {
         }
     }
     
-    return intToRoman.join('')
+    return intToRoman.join('');
 };
